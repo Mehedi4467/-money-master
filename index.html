@@ -38,7 +38,7 @@
                     <label for="income-input" class="col-sm-2 col-form-label fs-5 ">Income:</label>
                     <div class="col-auto mt-2">
                       <input type="text" class="form-control" id="income-input">
-                      <p class="text-danger error-massage">Please input number !!</p>
+                      <p id="income-input-error"  class="text-danger error-massage"></p>
                     </div>
                   </div>
                   
@@ -51,7 +51,7 @@
                     <label for="food-input" class="col-sm-2 col-form-label fs-5 ">Food:</label>
                     <div class="col-auto mt-2">
                       <input type="text" class="form-control" id="food-input">
-                      <p class="text-danger error-massage">Please input number !!</p>
+                      <p id="food-input-error" class="text-danger error-massage"></p>
                     </div>
                   </div>
 
@@ -59,7 +59,7 @@
                     <label for="rent-input" class="col-sm-2 col-form-label fs-5 ">Rent:</label>
                     <div class="col-auto mt-2">
                       <input type="text" class="form-control" id="rent-input">
-                      <p class="text-danger error-massage">Please input number !!</p>
+                      <p id="rent-input-error"  class="text-danger error-massage"></p>
                     </div>
                   </div>
 
@@ -67,7 +67,7 @@
                     <label for="clothes-input" class="col-sm-2 col-form-label fs-5 ">Clothes:</label>
                     <div class="col-auto mt-2">
                       <input type="text" class="form-control" id="clothes-input">
-                      <p class="text-danger error-massage">Please input number !!</p>
+                      <p id="clothes-input-error"  class="text-danger error-massage"></p>
                     </div>
                   </div>
 
@@ -75,6 +75,7 @@
 
                   <!-- total calculation start here -->
                   <div class="text-center mt-4">
+                    <p id="incomeError" class="text-danger error-massage"></p>
                     <h5>Total Expenses: <span id="total-cost">00</span> &#2547;</h5>
                     <h5>Balance: <span id="balance">00</span>  &#2547;</h5>
                   </div>
