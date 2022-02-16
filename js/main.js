@@ -3,12 +3,13 @@ function getInputValue(inputId){
     const inputText = document.getElementById(inputId + '-input');
     const inputValue = inputText.value;
     const inputNumber = parseFloat(inputValue);
+    debugger;
     let massage = errorMassage(inputValue,inputId, inputNumber, inputText);
     if(massage == true){
         return inputNumber;
     }
     else{
-        return 0;
+        return -1;
     }
     
 }
@@ -26,7 +27,7 @@ function calculateIncomeAndCost(income, food, rend, clothes){
     else{
     totalCostShow.innerText = totalCost;
     balanceShow.innerText = balance;
-    incomeError.style.display = 'none';
+    incomeError.innerText = '';
     }
     
 }
@@ -43,7 +44,7 @@ function errorMassage(inputValue, inputId, inputNumber, inputText){
         targetEorrorTag.innerText = 'Please input a number  greater then zero !!';
     }
     else{
-        targetEorrorTag.style.display = 'none';
+        targetEorrorTag.innerText = '';
         return true;
     }
    
@@ -55,7 +56,9 @@ document.getElementById('income_cost-button').addEventListener('click', function
     const foodNumber = getInputValue ('food');
     const rentNumber = getInputValue ('rent');
     const clothesNumber = getInputValue ('clothes');
-    if(incomeNumber !=0 || foodNumber != 0 || rentNumber !=0 || clothesNumber != 0){
+    console.log(incomeNumber, foodNumber, rentNumber, clothesNumber);
+   
+    if(incomeNumber != -1 && foodNumber != -1 && rentNumber != -1 && clothesNumber != -1){
         calculateIncomeAndCost(incomeNumber, foodNumber, rentNumber, clothesNumber);
     }
     
