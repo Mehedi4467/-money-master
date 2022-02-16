@@ -39,10 +39,10 @@ function calculateIncomeAndCost(income, food, rend, clothes){
 function errorMassage(inputValue, inputId, inputNumber, inputText){
     const targetEorrorTag = document.getElementById(inputId + '-input-error');
     if(isNaN(inputValue) || inputText.value == ''){
-        targetEorrorTag.innerText = 'Please input number !!'; 
+        targetEorrorTag.innerText = 'Please input a number !!'; 
     }
     else if(inputNumber < 0 ){
-        targetEorrorTag.innerText = 'Please input a number  greater then zero !!';
+        targetEorrorTag.innerText = 'Please input a number zero or greater then zero !!';
     }
     else{
         targetEorrorTag.innerText = '';
@@ -89,6 +89,7 @@ document.getElementById('income_cost-button').addEventListener('click', function
     
 });
 
+// saving calculation
 
 document.getElementById('saving-button').addEventListener('click', function(){
     const balance = document.getElementById('balance').innerText;
