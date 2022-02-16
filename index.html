@@ -23,83 +23,86 @@
 
    <main>
        <section class="container">
-           <div class="row">
+           <div class="row mt-5">
                <!-- body area background image start here -->
-               <div class="col-12 col-md-6 ">
+               <div class="col-12 col-md-4 col-lg-6">
                    <img class="img-fluid" src="images/bg-money.jpg" alt="Calculator background image">
                </div>
 
 
                <!-- income area html start here -->
-               <div class="col-12 col-md-6 text-center bg-color rounded">
+               <div class="col-12 col-md-8 col-lg-6 text-center bg-color rounded">
                    <h5>Income</h5>
-                   <div class="mb-3 mt-4 row align-items-center justify-content-center">
-                    <label for="inputPassword" class="col-sm-2 col-form-label fs-5 ">Income:</label>
-                    <div class="col-auto">
-                      <input type="text" class="form-control" id="inputPassword">
+                   <hr class="w-25 mx-auto d-block d-sm-none">
+                   <div class="mb-3 mt-4 row  justify-content-center">
+                    <label for="income-input" class="col-sm-2 col-form-label fs-5 ">Income:</label>
+                    <div class="col-auto mt-2">
+                      <input type="text" class="form-control" id="income-input">
+                      <p class="text-danger error-massage">Please input number !!</p>
                     </div>
                   </div>
+                  
                   <!-- income area html end here  -->
 
                   <!-- expenses area html start here  -->
                   <h5>Expenses</h5>
-                  <div class="mb-3 mt-4 row align-items-center justify-content-center">
-                    <label for="inputPassword" class="col-sm-2 col-form-label fs-5 ">Food:</label>
-                    <div class="col-auto">
-                      <input type="text" class="form-control" id="inputPassword">
+                  <hr class="w-25 mx-auto d-block d-sm-none">
+                  <div class="mt-4 row  justify-content-center">
+                    <label for="food-input" class="col-sm-2 col-form-label fs-5 ">Food:</label>
+                    <div class="col-auto mt-2">
+                      <input type="text" class="form-control" id="food-input">
+                      <p class="text-danger error-massage">Please input number !!</p>
                     </div>
                   </div>
 
-                  <div class="mb-3 row align-items-center justify-content-center">
-                    <label for="inputPassword" class="col-sm-2 col-form-label fs-5 ">Rent:</label>
-                    <div class="col-auto">
-                      <input type="text" class="form-control" id="inputPassword">
+                  <div class="row align-items-center justify-content-center">
+                    <label for="rent-input" class="col-sm-2 col-form-label fs-5 ">Rent:</label>
+                    <div class="col-auto mt-2">
+                      <input type="text" class="form-control" id="rent-input">
+                      <p class="text-danger error-massage">Please input number !!</p>
                     </div>
                   </div>
 
-                  <div class="mb-3  row align-items-center justify-content-center">
-                    <label for="inputPassword" class="col-sm-2 col-form-label fs-5 ">Clothes:</label>
-                    <div class="col-auto">
-                      <input type="text" class="form-control" id="inputPassword">
+                  <div class="row align-items-center justify-content-center">
+                    <label for="clothes-input" class="col-sm-2 col-form-label fs-5 ">Clothes:</label>
+                    <div class="col-auto mt-2">
+                      <input type="text" class="form-control" id="clothes-input">
+                      <p class="text-danger error-massage">Please input number !!</p>
                     </div>
                   </div>
 
-                  <button type="button" class="btn btn-primary btn-lg">Calculate</button>
+                  <button id="income_cost-button" type="button" class="btn btn-primary btn-lg mt-3">Calculate</button>
 
                   <!-- total calculation start here -->
                   <div class="text-center mt-4">
-                    <h5>Total Expenses: 500</h5>
-                    <h5>Balance: 4500</h5>
+                    <h5>Total Expenses: <span id="total-cost">500</span> &#2547;</h5>
+                    <h5>Balance: <span id="balance">4500</span>  &#2547;</h5>
                   </div>
                   <!-- total calculation end here  -->
                   
                   <!-- Saving  area html start here  -->
                
-                     
-                    <div class="d-flex align-items-center justify-content-center gap-4 mt-5">
+                  <div class="mt-5"><p class="text-danger error-massage">Please input number !!</p></div>
+                    <div class="d-flex align-items-center justify-content-center gap-4 ">
                         <div class="d-flex align-items-center fw-bold fs-5"> Save : </div>
-                        <div class="col-2"><input type="text" class="form-control" id="inputPassword"></div>
+                        <div class="col-2">
+                            <input  type="text" class="form-control" id="saving-input">
+                            
+                        </div>
                         <div class="d-flex align-items-center fw-bold"> % </div>
-                        <button type="button" class="btn btn-primary btn-md">Save</button>
+                        <button id="saving-button" type="button" class="btn btn-primary btn-md">Save</button>
                     </div>
                     <div class="text-center mt-4">
-                        <h5>Saving Amount: 2000 </h5>
-                        <h5>Remaining Balance: 2500 </h5>
+                        <h5>Saving Amount: <span id="saving-amount">2000</span> &#2547;</h5>
+                        <h5>Remaining Balance: <span id="remaining-amount">2500</span> &#2547;</h5>
                       </div>
                 
                   <!-- Saving  area html end here  -->
 
-
                 </div>
            <!-- income area html end here -->
-           
-           
             </div>
        </section>
-
-   
-
-
 
    </main>
 
