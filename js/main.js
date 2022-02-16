@@ -3,7 +3,7 @@ function getInputValue(inputId){
     const inputText = document.getElementById(inputId + '-input');
     const inputValue = inputText.value;
     const inputNumber = parseFloat(inputValue);
-    debugger;
+   
     let massage = errorMassage(inputValue,inputId, inputNumber, inputText);
     if(massage == true){
         return inputNumber;
@@ -30,6 +30,7 @@ function calculateIncomeAndCost(income, food, rend, clothes){
     incomeError.innerText = '';
     }
     
+    return balance;
 }
 
 
@@ -49,6 +50,31 @@ function errorMassage(inputValue, inputId, inputNumber, inputText){
     }
    
 }
+
+// saving calculation
+function savingCalculation(balanceAmount, income, saving){
+    const notEnoughMoney = document.getElementById('not-enough-balance');
+    const savingAmountShow = document.getElementById('saving-amount');
+    const remainingAmountShow = document.getElementById('remaining-amount');
+    const savingAmount = (saving/100) * income;
+    const remainingBalance = balanceAmount - savingAmount;
+    if(savingAmount > balanceAmount){
+        
+        notEnoughMoney.innerText = 'There is not enough money to saving.';
+        savingAmountShow.innerText = savingAmount;
+        savingAmountShow.style.backgroundColor = '#FFC107';
+        savingAmountShow.style.fontSize = '2rem';
+        remainingAmountShow.innerText = '00';
+    }
+    else{
+        savingAmountShow.innerText = savingAmount;
+        remainingAmountShow.innerText = remainingBalance;
+        savingAmountShow.style.backgroundColor = '#F8F8F8';
+        savingAmountShow.style.fontSize = '1.25rem';
+        notEnoughMoney.innerText = '';
+        
+    }
+}
 // income and cost Calculate
 
 document.getElementById('income_cost-button').addEventListener('click', function(){
@@ -56,11 +82,24 @@ document.getElementById('income_cost-button').addEventListener('click', function
     const foodNumber = getInputValue ('food');
     const rentNumber = getInputValue ('rent');
     const clothesNumber = getInputValue ('clothes');
-    console.log(incomeNumber, foodNumber, rentNumber, clothesNumber);
-   
+
     if(incomeNumber != -1 && foodNumber != -1 && rentNumber != -1 && clothesNumber != -1){
         calculateIncomeAndCost(incomeNumber, foodNumber, rentNumber, clothesNumber);
     }
+    
+});
+
+
+document.getElementById('saving-button').addEventListener('click', function(){
+    const balance = document.getElementById('balance').innerText;
+    const balanceAmount = parseFloat(balance);
+    const incomeNumber = getInputValue ('income');
+    const savingNumber = getInputValue ('saving');
+
+    if(balanceAmount != -1 && incomeNumber != -1 && savingNumber != -1 ){
+        savingCalculation(balanceAmount,incomeNumber, savingNumber);
+    }
+    
     
 });
 
